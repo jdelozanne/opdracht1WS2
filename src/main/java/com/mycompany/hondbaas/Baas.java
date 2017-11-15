@@ -8,6 +8,7 @@ package com.mycompany.hondbaas;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -17,10 +18,13 @@ import javax.persistence.Id;
 @Entity
 public class Baas implements Serializable {
     @Id
+    @GeneratedValue
     @Column
     private int id;
     @Column
     private String naam;
+    
+   
 
     public Baas() {
     }
@@ -39,6 +43,13 @@ public class Baas implements Serializable {
 
     public void setNaam(String naam) {
         this.naam = naam;
+    }
+   
+    
+
+    @Override
+    public String toString() {
+        return "Baas{" + "id=" + id + ", naam=" + naam + '}';
     }
 
 }
