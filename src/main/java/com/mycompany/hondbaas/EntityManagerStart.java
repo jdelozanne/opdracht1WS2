@@ -20,8 +20,7 @@ public class EntityManagerStart {
      */
     public static void main(String[] args) {
 EntityManagerFactory entityfactory = Persistence.createEntityManagerFactory("persistenceUnit"); 
-EntityManager em = entityfactory.createEntityManager();
-em.getTransaction();
+
     }
     
 }
