@@ -31,10 +31,16 @@ public class EntityManagerStart {
 
         Baas b = new Baas();
         Hond h = new Hond();
+        Hond x = new Hond();
+        Hond c = new Hond();
         b.setHonden(h);
+        b.setHonden(x);
+        b.setHonden(c);
        
         b.setNaam("julia");
         em.persist(h);
+        em.persist(x);
+        em.persist(c);
         em.persist(b);
         em.getTransaction().commit();
         em.close();
