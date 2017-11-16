@@ -11,6 +11,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -22,7 +26,10 @@ public class Hond implements Serializable {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     @Column
+    
     private int id;
+    @ManyToOne
+    private Baas baas;
 
     public Hond() {
     }

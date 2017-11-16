@@ -31,7 +31,7 @@ public class EntityManagerStart {
 
         Baas b = new Baas();
         Hond h = new Hond();
-        b.setHond(h);
+        b.setHonden(h);
        
         b.setNaam("julia");
         em.persist(h);
