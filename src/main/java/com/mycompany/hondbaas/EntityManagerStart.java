@@ -20,7 +20,7 @@ public class EntityManagerStart {
      */
     public static void main(String[] args) {
         save();
-        
+        System.exit(0);
         
     }
 
@@ -30,8 +30,11 @@ public class EntityManagerStart {
         em.getTransaction().begin();
 
         Baas b = new Baas();
+        Hond h = new Hond();
+        b.setHond(h);
        
         b.setNaam("julia");
+        em.persist(h);
         em.persist(b);
         em.getTransaction().commit();
         em.close();

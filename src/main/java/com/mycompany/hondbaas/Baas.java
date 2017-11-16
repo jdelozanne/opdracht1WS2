@@ -9,7 +9,11 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -18,13 +22,14 @@ import javax.persistence.Id;
 @Entity
 public class Baas implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
     @Column
     private int id;
-    @Column
+    @Column (length= 30, nullable = false)
     private String naam;
-    
-   
+    @OneToOne
+    @JoinColumn(name="hond_id")
+    private Hond hond;
 
     public Baas() {
     }
@@ -44,8 +49,9 @@ public class Baas implements Serializable {
     public void setNaam(String naam) {
         this.naam = naam;
     }
-   
-    
+    public void setHond(Hond hond) {
+        this.hond= hond;
+    }
 
     @Override
     public String toString() {
