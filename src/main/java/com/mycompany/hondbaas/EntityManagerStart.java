@@ -19,7 +19,7 @@ public class EntityManagerStart {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        save();
+        find();
         System.exit(0);
         
     }
@@ -52,7 +52,8 @@ public class EntityManagerStart {
     public static void find() {
         EntityManagerFactory entityfactory = Persistence.createEntityManagerFactory("persistenceUnit");
         EntityManager em = entityfactory.createEntityManager();
-        Baas c = em.find(Baas.class, 0);
+        //Baas c = em.find(Baas.class, 1);
+        Hond c = em.find(Hond.class, 2);
         System.out.println(c.toString());
         
     }

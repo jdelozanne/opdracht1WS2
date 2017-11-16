@@ -8,6 +8,7 @@ package com.mycompany.hondbaas;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,7 +30,7 @@ public class Hond implements Serializable {
     @Column
     
     private int id;
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY)
    
     private Baas baas;
 
@@ -42,6 +43,11 @@ public class Hond implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Hond{" + "id=" + id+'}';
     }
     
 }

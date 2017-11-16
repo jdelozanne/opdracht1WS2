@@ -37,6 +37,10 @@ public class Baas implements Serializable {
      @JoinColumn( name="baas_id")
     private List<Hond> honden = new ArrayList<>();
 
+    public List<Hond> getHonden() {
+        return honden;
+    }
+
     public Baas() {
     }
 
@@ -60,11 +64,22 @@ public class Baas implements Serializable {
     public void setHonden(Hond h) {
         this.honden.add(h);
     }
+    public String displayHonden(){
+        List<Hond> hond = getHonden();
+        String ids ="";
+        for( Hond h : hond){
+            ids+= "" + h.getId() + "+";
+        }
+        return ids;
+    }
     
 
     @Override
     public String toString() {
-        return "Baas{" + "id=" + id + ", naam=" + naam + '}';
+        return "Baas" + "id=" + id + ", naam=" + naam + "honden:" ;
+                //+
+                 //displayHonden();
+       
     }
 
 }
