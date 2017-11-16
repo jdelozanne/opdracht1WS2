@@ -34,6 +34,7 @@ public class Baas implements Serializable {
     private String naam;
   
     @OneToMany
+     @JoinColumn( name="hond_ID")
     private List<Hond> honden = new ArrayList<>();
 
     public Baas() {
